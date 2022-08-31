@@ -7,29 +7,27 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     //Group group;
-    //Playfield sharePoints;
+    Playfield playField;
+    PauseMenu pauseMenu;
 
-    //public Text finalScore;
+    public Text finalScore;
     public  GameObject gameOverUi;
    
 
     void Start()
     {
-        
+        playField = GetComponent<Playfield>();
+        pauseMenu = GetComponent<PauseMenu>();
     }
 
     public void GameOverScreen()
     {
         gameOverUi.SetActive(true);
+        pauseMenu.enabled = false;
+        finalScore.text = playField.hud_Score.text.ToString();
+        playField.enabled = false;
 
-    }
-
-    public void sharedScore()
-    {
-        //Playfield sharePoints = GetComponent<Playfield>();
-        //sharePoints.updateUi();
-        //finalScore.text = updateUi().ToString();            
-    }
+    }  
 
     public void restartScene()
     {

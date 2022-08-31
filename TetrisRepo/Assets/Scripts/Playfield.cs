@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class Playfield : MonoBehaviour
 {
     //the Grid itself
+    [Header("Grid")]
     public static int w = 10;
     public static int h = 20;
     public static Transform[,] grid = new Transform[w, h];
 
     // Score Varialbles
+    [Header("Score Variables")]
     public int oneLine = 10;
     public int twoLine = 20;
     public int threeLine = 30;
@@ -18,8 +20,9 @@ public class Playfield : MonoBehaviour
 
     private static int numberOfRowsThisTurn;
 
+    [Header("UI Settings")]
     public  Text hud_Score;
-    private  int currentScore = 0;
+    public  int currentScore = 0;
 
 
     // Start is called before the first frame update
